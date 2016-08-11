@@ -10,4 +10,4 @@ env.json #env.json.sample provided, just remove '.sample' and replace variables
 node_modules
 
 NOTES
-
+env.json
