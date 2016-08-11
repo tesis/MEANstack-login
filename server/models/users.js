@@ -112,7 +112,8 @@ UsersSchema.methods = {
 
     this.hash = bcrypt.hashSync(password, salt);
     this.salt = salt;
-
+    // console.log(password)
+    // console.log(bcrypt.compareSync(password, this.hash))
     return this;
   },
   // Validate password - when new password is created or on login

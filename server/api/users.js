@@ -130,7 +130,7 @@ var UserObj = {
         doc.generateHash(password);
 
         // update only salt, password and hash
-        var update = {$set: {password:req.body.password, updated:Date.now()}};
+        var update = {$set: {password:req.body.password, hash: doc.hash, updated:Date.now()}};
         var options = {new: true, upsert: true};
         users.update(conditions, update, options, function(err, doc) {
           if (err) {
