@@ -1,0 +1,13 @@
+$ cat .gitignore
+
+*~     # no files with ending and logs ~
+logs
+*.log
+*.md
+env.json #env.json.sample provided, just remove '.sample' and replace variables
+
+# Dependency directory
+node_modules
+
+NOTES
+
