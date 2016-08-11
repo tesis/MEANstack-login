@@ -11,7 +11,7 @@
 ## Objectives
 
 MongoDb Express AngularJs NodeJS Project (MEAN)
- - authentication system 
+ - authentication system
  - mongoDb using mongoose
  - Express version should be at least 4.1
  - restricted access for logged in user
@@ -112,8 +112,23 @@ README.md
 ```sh
 npm install
 ```
+**3 install bower if it is not already installed
+```sh
+sudo npm install bower -g
+```
+.bowerrc is provided and will install a frontend packages into
+**public/js folder**
 
-**3 run the project**
+
+**install angular**
+```sh
+bower install angular
+bower install angular-routes
+```
+
+(for now all needed packages are installed)
+
+**4 run the project**
 
 ```sh
 npm start
@@ -127,3 +142,4 @@ npm start
 ```sh
 test
 ```
+
