@@ -1,0 +1,19 @@
+.container
+  h1 Login Page
+  p.lead {{ctrl.message}}
+  div.col-md-4.col-sm-6
+    div(uib-alert  ng-repeat="alert in ctrl.alerts", dismiss-on-timeout="5000", type="{{alert.type}}", close="ctrl.closeAlert()" ) {{alert.msg}}
+
+    form(name="form" role="form", method="post" novalidate, autocomplete="off")
+      .form-group(show-errors)
+        input.form-control(type="text", name="username", placeholder="Enter Username", data-ng-model="ctrl.user.username", data-ng-minlength="3", required="required")
+
+      .form-group(show-errors)
+        input.form-control(type="password", name="password", placeholder="Password", data-ng-model="ctrl.user.password", data-ng-minlength="4",required="required")
+
+      button.btn.btn-primary(data-ng-click="ctrl.login()") Log In
+      a.ml-15(href="/") Cancel
+
+      div
+        a.pull-left(href="register") Create new account
+        a.pull-right(href="request") Lost Password

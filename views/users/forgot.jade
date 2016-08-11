@@ -1,0 +1,25 @@
+.container
+  h1 Reset Password
+  p.lead {{ctrl.message}}
+
+  div.col-md-6.col-sm-12
+    div(uib-alert  ng-repeat="alert in ctrl.alerts", dismiss-on-timeout="5000", type="{{alert.type}}", close="ctrl.closeAlert()" ) {{alert.msg}}
+
+    form.form-horizontal.col-md-12(name="ctrl.form" role="form", method="post" novalidate, autocomplete="off")
+
+
+      .form-group(show-errors)
+        label.control-label.col-xs-3 Email
+          span.icon-req.glyphicon.glyphicon-asterisk
+        .col-xs-9
+          input.form-control(type="email", name="email", placeholder="Enter Email", data-ng-model="ctrl.user.email", data-ng-minlength="3", required="required")
+
+          span.help-inline.error(data-ng-if = "ctrl.form.email.$touched &&  ctrl.form.email.$error.required") Email required
+
+          span.help-inline.error(data-ng-if = "ctrl.form.email.$touched &&  ctrl.form.email.$error.email") Email should be valid
+
+      .form-group.text-right
+        .col-xs-offset-2.col-xs-10
+          button.btn.btn-primary(data-ng-click="ctrl.requestReset()") Send
+          a.ml-15(href="/") Cancel
+

@@ -1,0 +1,28 @@
+.container
+  h1 Profile
+    a.btn.btn-default.pull-right.ml-15(href="", ng-confirm-message="Are you sure to delete account?", ng-confirm-click="ctrl.remove(ctrl.user._id, ctrl.user.userId)") Delete Account
+    a.btn.btn-info.pull-right(href="", data-ng-click="ctrl.changePassword=!ctrl.changePassword") Change password
+
+div.col-md-12
+dl.dl-horizontal
+  dt Username
+  dd {{ username}}
+
+  dt Email
+  dd {{ ctrl.user.email }}
+
+  dt Role
+  dd {{ ctrl.user.role }}
+
+  dt Activated
+  dd {{ ctrl.user.activated }}
+
+  dt Created
+  dd {{ ctrl.user.created  | date:"dd/MM/yyyy" }}
+
+  dt Updated
+  dd {{ ctrl.user.updated  | date:"dd/MM/yyyy" }}
+
+div(data-ng-if="ctrl.changePassword")
+  <change-password></change-password>
+

@@ -1,0 +1,22 @@
+{
+  "name": "teamCo",
+  "description": "meanstack project - customer management system",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tesis/meanstack",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-animate": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x",
+    "jquery": "2.2.x",
+    "angular-sanitize": "^1.5.8"
+  },
+  "authors": [
+    "Tereza Simcic <tereza.simcic@gmail.com>"
+  ],
+  "main": ""
+}

@@ -1,0 +1,5 @@
+.container
+  h1 TeamCo
+  p.lead {{ctrl.message}}
+  div.col-md-8
+    div(uib-alert  ng-repeat="alert in ctrl.alerts", dismiss-on-timeout="5000", type="{{alert.type}}", close="ctrl.closeAlert()" ) {{alert.msg}}

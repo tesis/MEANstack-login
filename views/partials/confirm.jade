@@ -1,0 +1,10 @@
+div.modal-content
+  div.modal-header
+    button.close(type="button",data-dismiss="modal",aria-hidden=true, data-ng-click="vm.cancel()") &times;
+    h4.modal-title {{ vm.title }}
+  div.modal-body
+    p {{vm.message}}
+  div.modal-footer
+    button.btn.btn-primary(data-ng-click="vm.ok()") Confirm
+    button.btn.btn-warning(data-ng-click="vm.cancel()") Cancel
+

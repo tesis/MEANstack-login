@@ -1,0 +1,589 @@
+body {
+  padding: 50px;
+  font: 14px "Lato",Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.ib{
+  display: inline-block;
+}
+.block{
+  display: block;
+}
+.left{
+  float: left;
+}
+.right{
+  float:right;
+}
+.clear{
+  clear:both;
+}
+ul{
+   padding-inline-start: 0 !important;
+}
+.red, .color-red{
+  color: #fa787e;
+}
+.green, .color-green{
+  color: #78fa89;
+}
+.inherit{
+  color:#777 !important;
+}
+.view-btn{
+  margin-left:10px;
+  padding:10px 5px;
+  border-bottom: 1px dotted #777;
+}
+/*This helps the ng-show/ng-hide animations start at the right place.*/
+.ng-hide {
+  display: none!important;
+}
+/*------------------------------------------------------------------
+  xxx:Icons (sort-icons for table)
+------------------------------------------------------------------*/
+.sort-icon, .icon-req {
+  font-size: 9px;
+  margin-left: 5px;
+}
+.icon-req{
+  color: #fa787e;
+  top: -3px;
+}
+.icon-actions {
+  color: #777777;
+  font-size: 1.3em !important;
+  margin: 0 5px;
+  font-style: normal;
+  cursor: pointer;
+}
+i.icons{
+  font-style:normal;
+}
+a.email:before, a.casework:before, a.comment:before, i.phone:before, i.user:before, a.edit:before, a.delete:before{
+  font-family:"Glyphicons Halflings";
+  line-height:1;
+  margin:5px;
+  color: rgba(0,0,0,0.1);
+}
+a.email:before{
+  content:"\2709";
+}
+a.casework:before{
+  content:"\e010";
+}
+a.comment:before{
+  content:"\e111";
+}
+i.phone:before{
+  content:"\e183";
+}
+i.user:before{
+  content:"\e008";
+}
+a.edit:before{
+  content:"\e065";
+}
+a.delete:before{
+  content:"\e020";
+  color: #fa787e !important;
+}
+.close{
+  font-style: 1em;
+  cursor: pointer;
+}
+.calendar {
+  color: #999;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2em;
+  margin-left: 5px;
+}
+.expand, .expand.up{
+  color: #777777;
+  font-size: 1.3em !important;
+  margin: 0 5px;
+}
+.expand:before, .expand.up:before{
+  font-family:"Glyphicons Halflings";
+  line-height:1;
+  margin:5px;
+  color: rgba(0,0,0,0.1);
+  content:"\e159";
+}
+.expand.up{
+  content:"\e160";
+}
+/*tasks icons*/
+.completed, .uncompleted{
+  font-size: 1.3em;
+  text-align: center;
+  height:40px;
+  width:100%;
+  margin:6px;
+  cursor: pointer;
+}
+.small.completed, .small.uncompleted{
+  font-size: 0.9em;
+  color: #777 !important;
+}
+.completed:before, .uncompleted:before{
+  font-family:"Glyphicons Halflings";
+  line-height:1;
+  /*margin:5px;*/
+}
+.completed {
+  color: #78fa89;
+}
+
+.completed:before{
+  content:"\e013";
+}
+
+.uncompleted {
+  color: #fa787e;
+}
+
+.uncompleted:before{
+  content:"\e014";
+}
+/*------------------------------------------------------------------
+  xxx:Tasks
+------------------------------------------------------------------*/
+p.status{
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.tasks-form textarea{
+  min-width: 400px;
+  min-height: 200px;
+}
+a.title{
+  font-size: 1.2em;
+}
+.results.list-unstyled{
+  margin-top: 10px;
+  padding: 5px;
+}
+.results.list-unstyled li{
+  height: 25px;
+  display: block;
+}
+.results.list-unstyled li a{
+  line-height: 25px;
+  display:inline-block;
+}
+.results.list-unstyled li a:hover{
+  border-bottom: 1px dotted rgba(0,0,0,0.18)
+}
+/*------------------------------------------------------------------
+  xxx:Dropdowns
+------------------------------------------------------------------*/
+.dropdown, .dropdown .btn{
+  min-width: 100px;
+  text-align: left !important;
+}
+.caret{
+  margin-left:10px !important;
+}
+.dropdown-menu{
+  min-width: 100px !important;
+}
+.dd-165{
+  min-width: 165px !important;
+}
+/*------------------------------------------------------------------
+  xxx:Button row - lists
+------------------------------------------------------------------*/
+.btn-row{
+
+}
+.btn-row .dropdown{
+
+}
+.title {
+  border-bottom: 1px dotted #999;
+  margin-bottom: 5px;
+}
+/*------------------------------------------------------------------
+  xxx:Table style
+------------------------------------------------------------------*/
+.table{
+  display: table;
+  table-layout: fixed;
+  width:100%;
+}
+.table-row{
+  display: table-row;
+  height: 100%;
+  opacity: 1;
+}
+.table-row.ng-hide{
+  transition: all .8s ease-in-out;
+  height: 0;
+  opacity: 0;
+}
+.table-row .wrapper {
+  display: inline-block;
+  height: 100%;
+  min-height: 200px;
+  position: relative;
+  width: 100%;
+}
+.table-row .title, .table-row .body{
+  /*top:0;
+  position: absolute;*/
+  width:100%;
+  margin: 10px;
+}
+.table-row .body{
+  height: 100%;
+  top:40px;
+  display: inline-block;
+}
+.table-cell{
+  display: table-cell;
+  padding: 40px 20px;
+}
+.table.contacts .table-cell{
+  padding:10px !important;
+}
+.table.contacts .table-row{
+  border-bottom: 1px dotted #777;
+}
+
+.tasks ul.list-unstyled{
+  display: block;
+  min-height: 450px;
+}
+.tasks ul.list-unstyled li{
+  display: inline-block;
+  float: left;
+  clear:both;
+  line-height: 1.5;
+}
+.tasks h3{
+  margin: 0;
+}
+.tasks h3.title{
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+/*------------------------------------------------------------------
+  xxx: Bootstrap override
+------------------------------------------------------------------*/
+.jumbotron {
+  padding: 2em 1em !important;
+  margin: 0 !important;
+  background-color: rgba(0,0,0,0.08) !important;
+}
+a:focus, a:hover {
+  text-decoration: none !important;
+  color: #23527c;
+}
+/*-------------------- styles from hrweb ---------------*/
+
+/*------------------------------------------------------------------
+  xxx:General
+------------------------------------------------------------------*/
+.btn-primary {
+  background-color: rgba(0, 85, 150, 0.9);
+}
+.width100p {
+  width: 100%;
+}
+.height500px {
+  height: 500px;
+}
+.container80p {
+  width: 80% !important;
+}
+
+.clearMP {
+  margin: 0;
+  padding: 0;
+}
+/*------------------------------------------------------------------
+  xxx:Page Wrappers
+------------------------------------------------------------------*/
+#page-wrapper {
+  width: 100% !important;
+  overflow: hidden;
+  z-index: 2;
+  margin-bottom: 140px;
+  position: relative;
+  display: block;
+  background: #f9f9f9;
+}
+.wh-shadow {
+  text-shadow: 1px 1px #fff;
+}
+/* Wrap the content in fixed width container */
+.page-container {
+  width: 1170px;
+}
+/* Wrap the content in fluid container */
+.container-fluid {
+  width: 80%;
+  margin: 0 auto;
+}
+/* Wrap the content - generic */
+.page-section {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  clear: both;
+}
+.w50p {
+  width: 50% !important;
+}
+
+/*------------------------------------------------------------------
+  xxx:PADDINGS MARGINS
+------------------------------------------------------------------*/
+.p-20 {
+  padding: 20px !important;
+}
+.p-40 {
+  padding: 40px !important;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.pt-40 {
+  padding-top: 40px;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.pb-40 {
+  padding-bottom: 40px;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.pl-20 {
+  padding-left: 20px;
+}
+.pr-20 {
+  padding-right: 20px;
+}
+.wide-padding {
+  padding: 100px 0 120px !important;
+}
+.wide-padding-half {
+  padding: 80px 0 60px !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+/*.mt100, */
+.mt-10 {
+  margin-top: 10px !important;
+}
+.mt-20 {
+  margin-top: 20px !important;
+}
+.mt-40 {
+  margin-top: 40px !important;
+}
+.mt-100 {
+  margin-top: 100px !important;
+}
+.ml-15{
+  margin-left:15px;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+.mb-100 {
+  margin-bottom: 100px !important;
+}
+.mtb-box {
+  margin: 25px 0 40px;
+}
+.pm-30 {
+  padding: 20px 30px;
+  margin: 0 auto;
+  width: 100%;
+}
+.header.bg-scroll .pm-30 {
+  padding: 10px 30px !important;
+}
+/*------------------------------------------------------------------
+  xxx:Text
+------------------------------------------------------------------*/
+.text-large {
+  font-size: 2.5em !important;
+  line-height: 2 !important;
+}
+.text-medium {
+  font-size: 2em !important;
+  line-height: 2 !important;
+}
+.text-wide {
+  letter-spacing: 2px;
+}
+.right {
+  float: right;
+}
+.relative {
+  position: relative;
+}
+.lh-2{
+  line-height: 2em !important;
+}
+/*------------------------------------------------------------------
+  xxx:Sub navigation
+------------------------------------------------------------------*/
+.ul-inner-nav{
+  margin:1em 0;
+  font-size: 1.2em;
+  line-height: 2;
+}
+
+/*------------------------------------------------------------------
+  xxx:Tables
+------------------------------------------------------------------*/
+th {
+    cursor:pointer;
+}
+.pagination{
+  margin:0 0 0 30px;
+}
+h1,h2,h3,h4{
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.bold{
+  font-weight: bold;
+}
+li a{
+  font-weight: 300 !important;
+}
+li.active a{
+  color:#555;
+  font-weight: 400;
+}
+li span.hello {
+  color: #999;
+  display: inline-block;
+  line-height: 20px;
+  padding: 15px 0;
+}
+.ng-invalid.ng-dirty{
+  border-color: #fa787e;
+}
+.ng-valid.ng-dirty{
+  border-color: #78fa89
+}
+span.error{
+  color: #fa787e;
+}
+/*------------------------------------------------------------------
+  xxx:animation - not in use
+------------------------------------------------------------------*/
+ .my-form {
+   transition:all linear 0.5s;
+   background: transparent;
+ }
+ .my-form.ng-invalid {
+   background: red;
+ }
+ /*------------------------------------------------------------------
+  xxx:Animations
+------------------------------------------------------------------*/
+ul.animate{}
+.animate-repeat {
+  line-height:30px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-scope.ng-hide {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}
+.animate-show {
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+}
+
+.animate-show.ng-hide,.animate-repeat {
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0.3;
+  padding: 0 10px;
+}
+/*------------------------------------------------------------------
+  xxx:loading spinner
+------------------------------------------------------------------*/
+.fa-spin {  animation: 2s linear 0s normal none infinite running fa-spin;}
+@keyframes fa-spin {0% {    transform: rotate(0deg);}100% {  transform: rotate(359deg);}}
+.loading, .loader {
+  background: rgba(0, 0, 0, 0.15) ;
+  border-radius: 10px;
+  color: #000000;
+  display: inline-block;
+  font-size: 20px;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 2px;
+  width: 20px;
+  z-index: 1000;
+  position:relative;
+
+  font-family: FontAwesome;
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-language-override: normal;
+  font-size: inherit;
+  font-size-adjust: none;
+  font-stretch: normal;
+  font-style: normal;
+  font-synthesis: weight style;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+  transform: translate(0px, 0px);
+}
+.loading:after{
+  position:absolute;
+  content: '*';
+  top:2px;
+  left:3px;
+}

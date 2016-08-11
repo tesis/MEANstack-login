@@ -1,0 +1,41 @@
+//- includes/footer.jade
+footer
+  hr
+  p Copyright 2016 MEANstack LoginSystem
+
+block scripts
+  //- main scripts
+
+  script(src='lib/angular/angular.min.js')
+  script(src='lib/angular-route/angular-route.min.js')
+  script(src='lib/ui-bootstrap/ui-bootstrap-tpls-1.3.3.min.js')
+
+  //- App JS - bootstrapping
+  script(src='main.js')
+
+  //- Reusable
+  script(src='modules/modal.module.js')
+  script(src='shared/interceptor.service.js')
+
+  //- Users
+  script(src='components/users/config.route.js')
+  script(src='components/users/users.controller.js')
+  script(src='components/users/users.service.js')
+  script(src='components/users/users.directive.js')
+
+  //- Errors
+  script(src='shared/error/error.controller.js')
+  script(src='modules/error.module.js')
+
+  //- Menu
+  script(src='shared/menu/menu.controller.js')
+  script(src='shared/menu/menu.directive.js')
+
+  //- Dashboard
+  script(src='components/dashboard/config.route.js')
+  script(src='components/dashboard/dashboard.controller.js')
+
+  //-Home
+  script(src='components/home/home.controller.js')
+
+

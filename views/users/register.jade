@@ -1,0 +1,69 @@
+.container
+  h1 Registration
+  p.lead {{message}}
+
+  div.col-md-6.col-sm-12
+    div(uib-alert  ng-repeat="alert in ctrl.alerts", dismiss-on-timeout="5000", type="{{alert.type}}", close="ctrl.closeAlert()" ) {{alert.msg}}
+
+    //- data-ng-submit="ctrl.submitForm(form.$valid)",
+    form.form-horizontal.col-md-12(name="ctrl.form" role="form", method="post" novalidate, autocomplete="off")
+      .form-group(show-errors)
+        label.control-label.col-xs-3 Username
+          span.icon-req.glyphicon.glyphicon-asterisk
+        .col-xs-9
+
+          input.form-control(type="text", name="username", placeholder="Enter Username", data-ng-model="ctrl.user.username", data-ng-minlength="3", required="required", onfocus="this.removeAttribute('readonly')", readonly, auth-username)
+          //- form not related to ctrl
+          //- onfocus="this.removeAttribute('readonly')", readonly,
+          span.help-inline.error(data-ng-show = "ctrl.form.username.$touched &&  ctrl.form.username.$error.required") Username required
+          span.help-inline.error(data-ng-show = "ctrl.form.$dirty &&  ctrl.form.username.$error.minlength") Username too short
+          span.help-inline.error(data-ng-show = "ctrl.form.username.$touched && ctrl.form.username.$error.usernameExists") Username already taken
+
+          //- <br /><tt>text = {{ctrl.form.username.text}}</tt><br/>
+          //- <tt>myForm.input.$dirty = {{ctrl.form.username.$dirty}}</tt><br/>
+          //- <tt>myForm.input.$pristine = {{ctrl.form.username.$pristine}}</tt><br/>
+          //- <tt>myForm.input.$touched = {{ctrl.form.username.$touched}}</tt><br/>
+          //- <tt>myForm.input.$valid = {{ctrl.form.username.$valid}}</tt><br/>
+          //- <tt>myForm.input.$error = {{ctrl.form.username.$error}}</tt><br/>
+          //- <tt>myForm.$valid = {{ctrl.form.$valid}}</tt><br/>
+          //- <tt>myForm.$error.required = {{!!ctrl.form.username.$error.required}}</tt><br/>
+          //- <tt>myForm.$error.minlength = {{!!ctrl.form.username.$error.minlength}}</tt><br/>
+          //- <tt>myForm.$error.usernameExists = {{ctrl.form.username.$error.usernameExists}}</tt><br/>
+
+      .form-group(show-errors)
+        label.control-label.col-xs-3 Password
+          span.icon-req.glyphicon.glyphicon-asterisk
+        .col-xs-9
+
+          input.form-control(type="password", name="password", placeholder="Password", data-ng-model="ctrl.user.password", data-ng-minlength="6",ng-maxlength="16", required="required")
+
+          span.help-inline.error(data-ng-show = "ctrl.form.password.$touched &&  ctrl.form.password.$error.required") Password required
+          span.help-inline.error(data-ng-show = "ctrl.form.$invalid &&  ctrl.form.password.$error.minlength || ctrl.form.password.$error.maxlength") Password must be 6-16 character long
+
+      .form-group(show-errors)
+        label.control-label.col-xs-3 Repeat password
+          span.icon-req.glyphicon.glyphicon-asterisk
+        .col-xs-9
+
+          input.form-control(type="password", name="repeatPassword", placeholder="Repeat Password", data-ng-model="ctrl.user.repeatPassword", data-ng-minlength="4",required="required", equal-to="ctrl.user.password")
+
+          span.help-inline.error(data-ng-show = "ctrl.form.repeatPassword.$touched && ctrl.form.repeatPassword.$error.equalTo") Password must be equal
+
+      .form-group(show-errors)
+        label.control-label.col-xs-3 Email
+          span.icon-req.glyphicon.glyphicon-asterisk
+        .col-xs-9
+          input.form-control(type="email", name="email", placeholder="Enter Email", data-ng-model="ctrl.user.email", data-ng-minlength="3", required="required" auth-email)
+
+          span.help-inline.error(data-ng-if = "ctrl.form.email.$touched &&  ctrl.form.email.$error.required") Email required
+
+          span.help-inline.error(data-ng-if = "ctrl.form.email.$touched &&  ctrl.form.email.$error.email") Email should be valid
+
+          span.help-inline.error(data-ng-if = "ctrl.form.email.$touched && ctrl.form.email.$error.emailExists") Email already exists
+      p.small Required fields
+        span.icon-req.glyphicon.glyphicon-asterisk
+      .form-group.text-right
+        .col-xs-offset-2.col-xs-10
+          button.btn.btn-primary(data-ng-click="ctrl.create()") Register
+          a.ml-15(href="/") Cancel
+

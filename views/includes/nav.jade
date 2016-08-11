@@ -1,0 +1,30 @@
+nav.navbar.navbar-fixed-top.navbar-default
+  div.container-fluid
+    div.navbar-header
+      a.navbar-brand(href="/") MeanApp
+
+    div.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(ng-class="mCtrl.menuClass('about')")
+          a(href="about") About
+        li(ng-class="mCtrl.menuClass('contact')")
+          a(href="contact") Contact
+        li(ng-class="mCtrl.menuClass('CMS')", data-ng-show="loggedIn")
+          a(href="CMS") CMS
+
+
+
+      ul.list-inline.pull-right.nav.navbar-nav
+        li( data-ng-show="loggedIn")
+          span.hello Hello {{username}}
+        li(data-ng-class="mCtrl.menuClass('profile')", data-ng-show="loggedIn")
+          a(href="profile") Profile
+
+        li(ng-class="mCtrl.menuClass('logout')", data-ng-controller="logoutController as logoutCtrl",data-ng-show="loggedIn")
+          a(href="logout", data-ng-click="logoutCtrl.logout()") Logout
+
+
+        li(ng-class="mCtrl.menuClass('login')", data-ng-hide="loggedIn")
+          a(href="login") Login
+        li(ng-class="mCtrl.menuClass('register')", data-ng-hide="loggedIn")
+          a(href="register") Register
