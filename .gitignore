@@ -4,7 +4,7 @@ $ cat .gitignore
 logs
 *.log
 *.md
-.env.json #.env.json.sample provided, just remove '.sample' and replace variables
+env.json #env.json.sample provided, just remove '.sample' and replace variables
 
 # Dependency directory
 node_modules
